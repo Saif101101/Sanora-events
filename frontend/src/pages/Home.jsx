@@ -198,9 +198,8 @@ const Home = () => {
             {mockGalleryImages.map((image, index) => (
               <div 
                 key={index} 
-                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-500 group animate-fadeIn" 
+                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-500 group animate-fadeIn h-80" 
                 style={{ 
-                  height: index % 3 === 0 ? '400px' : '320px',
                   animationDelay: `${index * 0.1}s`
                 }}
               >
