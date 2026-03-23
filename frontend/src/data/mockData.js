@@ -21,16 +21,45 @@ export const mockServices = [
     icon: <Sparkles className="w-6 h-6 text-gray-700" />
   },
   {
-    title: 'Corporate Events',
-    description: 'Professional event planning for corporate gatherings, team building activities, and business celebrations with impeccable attention to detail.',
-    image: 'https://images.pexels.com/photos/57980/pexels-photo-57980.jpeg',
-    icon: <Calendar className="w-6 h-6 text-gray-700" />
-  },
-  {
     title: 'Private Parties',
-    description: 'Exclusive private celebrations tailored to your unique style, from intimate dinners to grand festivities with personalized touches.',
+    description: 'Host exclusive private celebrations with customized themes, premium setups, and attention to every detail for an unforgettable experience.',
     image: 'https://images.unsplash.com/photo-1531686264889-56fdcabd163f',
     icon: <Users className="w-6 h-6 text-gray-700" />
+  },
+  {
+    title: 'Custom Celebration Planning',
+    description: 'Have a unique vision? We bring your dream celebration to life with personalized planning, creative designs, and seamless coordination.',
+    image: 'https://images.pexels.com/photos/57980/pexels-photo-57980.jpeg',
+    icon: <Calendar className="w-6 h-6 text-gray-700" />
+  }
+];
+
+export const mockStats = [
+  { number: '500+', label: 'Events Planned' },
+  { number: '100%', label: 'Happy Clients' },
+  { number: '5+', label: 'Years Experience' }
+];
+
+export const mockHowItWorks = [
+  {
+    number: '01',
+    title: 'Share Your Event Idea',
+    description: 'Tell us about your celebration vision, preferences, and special requirements.'
+  },
+  {
+    number: '02',
+    title: 'Choose Your Package',
+    description: 'Select from our curated celebration packages or customize your own.'
+  },
+  {
+    number: '03',
+    title: 'We Design & Plan',
+    description: 'Our team handles everything - from decor to coordination, ensuring perfection.'
+  },
+  {
+    number: '04',
+    title: 'Enjoy Your Celebration',
+    description: 'Relax and create memories while we take care of every detail.'
   }
 ];
 
