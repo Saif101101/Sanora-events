@@ -2,22 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
 import { PartyPopper, Heart, Sparkles, Calendar, Users, ChevronRight } from 'lucide-react';
 import { mockServices, mockGalleryImages, mockTestimonials, mockStats, mockHowItWorks } from '../data/mockData';
-import { toast } from '../hooks/use-toast';
 
 const Home = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    eventType: '',
-    eventDate: '',
-    message: ''
-  });
-
   const [visibleSections, setVisibleSections] = useState({});
 
   useEffect(() => {
@@ -41,28 +29,6 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Inquiry Sent!",
-      description: "We'll get back to you soon to plan your perfect celebration.",
-    });
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      eventType: '',
-      eventDate: '',
-      message: ''
-    });
-  };
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -84,7 +50,7 @@ const Home = () => {
             <button onClick={() => scrollToSection('services')} className="text-gray-600 hover:text-gray-900 transition-colors">Services</button>
             <button onClick={() => scrollToSection('gallery')} className="text-gray-600 hover:text-gray-900 transition-colors">Gallery</button>
             <button onClick={() => scrollToSection('testimonials')} className="text-gray-600 hover:text-gray-900 transition-colors">Testimonials</button>
-            <Button onClick={() => scrollToSection('book')} className="bg-[#5a4d4d] hover:bg-[#4a3d3d] text-white px-6 py-2 rounded-md transition-all">Book Now</Button>
+            <Button onClick={() => scrollToSection('book')} className="bg-[#5a4d4d] hover:bg-[#4a3d3d] text-white px-6 py-2 rounded-md transition-all">Contact</Button>
           </nav>
         </div>
       </header>
@@ -263,94 +229,73 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Book Section */}
-      <section id="book" className="py-20 px-6" style={{ background: '#fafaf8' }} data-animate>
-        <div className={`max-w-2xl mx-auto transition-all duration-1000 ${visibleSections['book'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      {/* Contact Section */}
+      <section id="book" className="py-20 px-6 bg-white" data-animate>
+        <div className={`max-w-4xl mx-auto transition-all duration-1000 ${visibleSections['book'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold mb-4" style={{ fontFamily: 'sans-serif' }}>Book Your Celebration</h2>
-            <p className="text-lg text-gray-600">Let's start planning your unforgettable event</p>
+            <h2 className="text-5xl font-bold mb-4" style={{ fontFamily: 'sans-serif' }}>Get In Touch</h2>
+            <p className="text-lg text-gray-600">Ready to plan your perfect celebration? Contact us today!</p>
           </div>
-          <Card className="border-0 shadow-xl">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
-                    <Input 
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Your full name" 
-                      required
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                    <Input 
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="your@email.com" 
-                      required
-                      className="w-full"
-                    />
-                  </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Email Card */}
+            <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-[#f5f3f0] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-[#5a4d4d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
-                    <Input 
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+1 (555) 000-0000" 
-                      required
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Event Type *</label>
-                    <Input 
-                      name="eventType"
-                      value={formData.eventType}
-                      onChange={handleInputChange}
-                      placeholder="e.g., Birthday, Engagement" 
-                      required
-                      className="w-full"
-                    />
-                  </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: 'sans-serif' }}>Email Us</h3>
+                <a 
+                  href="mailto:sana@sanoraevents.ca" 
+                  className="text-lg text-[#5a4d4d] hover:text-[#4a3d3d] transition-colors font-medium"
+                >
+                  sana@sanoraevents.ca
+                </a>
+                <p className="text-gray-600 mt-4 text-sm">We'll respond within 24 hours</p>
+              </CardContent>
+            </Card>
+
+            {/* Phone Card */}
+            <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-[#f5f3f0] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-[#5a4d4d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Event Date *</label>
-                  <Input 
-                    type="date"
-                    name="eventDate"
-                    value={formData.eventDate}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <Textarea 
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Tell us about your event vision..." 
-                    rows={5}
-                    className="w-full"
-                  />
-                </div>
-                <Button type="submit" className="w-full bg-[#5a4d4d] hover:bg-[#4a3d3d] text-white py-6 text-lg rounded-md transition-all shadow-md hover:shadow-lg hover:scale-105">
-                  Send Inquiry
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: 'sans-serif' }}>Call Us</h3>
+                <a 
+                  href="tel:+16477866625" 
+                  className="text-lg text-[#5a4d4d] hover:text-[#4a3d3d] transition-colors font-medium"
+                >
+                  +1 (647) 786-6625
+                </a>
+                <p className="text-gray-600 mt-4 text-sm">Mon-Fri: 9AM - 6PM EST</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <p className="text-gray-600 text-lg mb-6">Let's create something beautiful together</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => window.location.href = 'mailto:sana@sanoraevents.ca'}
+                className="bg-[#5a4d4d] hover:bg-[#4a3d3d] text-white px-8 py-6 text-lg rounded-md transition-all shadow-md hover:shadow-lg hover:scale-105"
+              >
+                Send Email
+              </Button>
+              <Button 
+                onClick={() => window.location.href = 'tel:+16477866625'}
+                variant="outline"
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg rounded-md transition-all hover:scale-105"
+              >
+                Call Now
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
