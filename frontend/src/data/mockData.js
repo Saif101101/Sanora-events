@@ -72,7 +72,7 @@ export const mockGalleryImages = [
   'https://images.unsplash.com/photo-1527529482837-4698179dc6ce',
   'https://images.unsplash.com/photo-1531686264889-56fdcabd163f',
   'https://images.unsplash.com/photo-1513151233558-d860c5398176',
-  'https://images.unsplash.com/photo-1758870041148-31d28fdf34d9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  'https://images.unsplash.com/photo-1741969494307-55394e3e4071?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 ];
 
 export const mockTestimonials = [
