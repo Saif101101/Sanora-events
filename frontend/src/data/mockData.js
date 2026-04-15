@@ -64,7 +64,7 @@ export const mockHowItWorks = [
 ];
 
 export const mockGalleryImages = [
-  'https://images.unsplash.com/photo-1751257576155-9f25d26fb6ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1763129636673-df7c37cf251d',
   'https://images.unsplash.com/photo-1644709438449-3d9b34793988',
   'https://images.pexels.com/photos/57980/pexels-photo-57980.jpeg',
   'https://images.unsplash.com/photo-1761574040621-d0b6737840fc',
