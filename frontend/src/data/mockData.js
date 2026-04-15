@@ -17,7 +17,7 @@ export const mockServices = [
   {
     title: 'Anniversary Celebrations',
     description: 'Celebrate your milestones with elegant setups that honor your journey together, featuring sophisticated themes and memorable experiences.',
-    image: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce',
+    image: 'https://images.unsplash.com/photo-1772305436749-52e549c8fca3',
     icon: <Sparkles className="w-6 h-6 text-gray-700" />
   },
   {
