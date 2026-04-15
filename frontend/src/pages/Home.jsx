@@ -272,7 +272,7 @@ const Home = () => {
                 >
                   +1 (647) 786-6625
                 </a>
-                <p className="text-gray-600 mt-4 text-sm">Mon-Fri: 9AM - 6PM EST</p>
+                <p className="text-gray-600 mt-4 text-sm">All day: 9AM - 10PM EST</p>
               </CardContent>
             </Card>
           </div>
